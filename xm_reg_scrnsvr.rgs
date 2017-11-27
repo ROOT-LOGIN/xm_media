@@ -1,0 +1,41 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		NoRemove {F2061DDE-EDBA-4474-9240-0B233A6BDDA0} = s "XpeulMediaSSInvoker"
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Microsoft
+		{
+			NoRemove MediaPlayer
+			{
+				NoRemove Objects
+				{
+					NoRemove Effects
+					{
+						ForceRemove XpeulMediaSSInvoker
+						{
+							Properties
+							{
+								val classid = s '{F2061DDE-EDBA-4474-9240-0B233A6BDDA0}'
+								val description = s 'res://XpeulMedia.dll/RT_STRING/#301'
+								val name = s 'res://XpeulMedia.dll/RT_STRING/#300'
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

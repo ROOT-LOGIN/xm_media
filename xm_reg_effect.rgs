@@ -1,0 +1,65 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {F0C629D0-9E85-4672-87E6-54BA08C9487A} = s 'XpeulMediaEffect'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Microsoft
+		{
+			NoRemove MediaPlayer
+			{
+				NoRemove Objects
+				{
+					NoRemove Effects
+					{
+						ForceRemove XpeulMediaEffect
+						{
+							Properties
+							{
+								val classid = s '{F0C629D0-9E85-4672-87E6-54BA08C9487A}'
+								val description = s 'res://XpeulMedia.dll/RT_STRING/#101'
+								val name = s 'res://XpeulMedia.dll/RT_STRING/#100'
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+HKEY_CURRENT_USER
+{
+	NoRemove Software
+	{
+		NoRemove XpeulEnterprise
+		{
+			NoRemove XpeulMedia
+			{
+				ForceRemove XpeulLyricsShow = s 'C:\Program Files\Windows Media Player\Lyrics\*'
+				{
+					val BackGroundColor = b '80000000'
+					val WaveformAlphaColor = b 'ffff0000ff00ff00'
+					val WaveformPoints = d '1024'
+					val LyricsAlphaColorH = b 'ff0000ffffffff00'
+					val LyricsAlphaColorV = b 'ff0000ffff00ff00ffff0000'
+					val LyricsFont = s 'ËÎÌו'
+					val FrequencyAlphaColor = b 'ffff0000ff00ff00ffffffff'
+					val FrequencyDoExchange = d '1'
+				}
+			}
+		}
+	}
+}

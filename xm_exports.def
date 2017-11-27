@@ -1,0 +1,11 @@
+LIBRARY	"XpeulMedia"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject		PRIVATE
+	DllRegisterServer		PRIVATE
+	DllUnregisterServer	PRIVATE
+
+;	XmEffectFillRegistry = ?FillRegistry@CXpeulMediaEffect@@SAXXZ
+;	XmSSInvokerFillRegistry = ?FillRegistry@CXpeulMediaSSInvoker@@SAX_N@Z
+	

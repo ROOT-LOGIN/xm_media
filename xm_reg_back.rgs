@@ -1,0 +1,59 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {F3DE884F-C8BD-4665-8734-FE62648B7DDC} = s 'XpeulMediaBackControl'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}
+
+HKEY_LOCAL_MACHINE
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Microsoft
+		{
+			NoRemove MediaPlayer
+			{
+				NoRemove UIPlugins
+				{
+					ForceRemove {F3DE884F-C8BD-4665-8734-FE62648B7DDC}
+					{
+						val FriendlyName = s 'res://XpeulMedia.dll/RT_STRING/#200'
+						val Capabilities = d '&H80000001'
+						val Description = s 'res://XpeulMedia.dll/RT_STRING/#201'
+					}
+				}
+			}
+		}
+	}
+}
+
+HKEY_CURRENT_USER
+{
+	NoRemove Software
+	{
+		NoRemove XpeulEnterprise
+		{
+			NoRemove XpeulMedia
+			{
+				ForceRemove XpeulVedioSink
+				{
+					val left = d '0'
+					val top = d '0'
+					val right = d '480'
+					val bottom = d '320'
+				}
+				ForceRemove XpeulMediaBack = s '%MODULE%.log.xml'
+				{
+					val writelog = d '1'
+				}
+			}
+		}
+	}
+}
