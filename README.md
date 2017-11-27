@@ -1,2 +1,7 @@
 # xm_media
-A windows media player extension
+
+<B>It provides Visulization and Lyrics display.</B><br />
+
+=====================================
+
+<B>This is the beginning.</B>
